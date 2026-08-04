@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#fff8f1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Homebound" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/homebound-icon-180.png" />
+  <link rel="icon" href="assets/homebound-icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Homebound</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand" aria-label="Homebound">
+        <div class="brand-mark" aria-hidden="true">🏡</div>
+        <div>
+          <div class="brand-name">Homebound</div>
+          <div class="brand-tagline">One step at a time. One dream at a time.</div>
+        </div>
+      </div>
+      <button class="icon-btn notification-btn" id="notificationsButton" aria-label="Notifications">
+        <span aria-hidden="true">🔔</span>
+        <span class="notification-dot" id="notificationDot">3</span>
+      </button>
+    </header>
+
+    <main class="page" id="homePage">
+      <section class="recovery-banner" id="recoveryBanner" hidden>
+        <div class="recovery-icon">🛟</div>
+        <div class="recovery-copy">
+          <strong>Recovery snapshot available</strong>
+          <span>Your latest safe copy is ready if you need it.</span>
+        </div>
+        <button class="text-btn" id="dismissRecovery">Dismiss</button>
+      </section>
+
+      <section class="hero-card card" aria-labelledby="greetingTitle">
+        <div class="hero-copy">
+          <span class="eyebrow" id="todayLabel">Wednesday, 5 August</span>
+          <h1 id="greetingTitle">Good morning 👋</h1>
+          <p>You’re building something beautiful together.</p>
+          <div class="hero-pill"><span>✨</span><strong id="stepsCloser">287</strong>&nbsp;steps closer</div>
+        </div>
+        <div class="hero-art" aria-label="A cheerful illustrated couple near their future home">
+          <div class="sun"></div>
+          <div class="cloud cloud-one">☁️</div>
+          <div class="cloud cloud-two">☁️</div>
+          <div class="birds">⌁ ︿</div>
+          <div class="hill hill-back"></div>
+          <div class="hill hill-front"></div>
+          <div class="dream-house">🏡</div>
+          <div class="couple">🧑🏽‍🤝‍🧑🏽</div>
+          <div class="flowers">🌼 🌷 🌼</div>
+        </div>
+      </section>
+
+      <section class="today-card card tappable" data-detail="today" tabindex="0" role="button" aria-label="Open today's plan">
+        <div class="section-heading-row">
+          <div>
+            <span class="eyebrow coral">TODAY</span>
+            <h2>Your next gentle steps</h2>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+        <div class="today-list">
+          <div class="today-item">
+            <span class="today-icon amber">💳</span>
+            <div><strong>Scenic Lookout step</strong><span>Due in 2 days</span></div>
+            <span class="status-chip">Planned</span>
+          </div>
+          <div class="today-item">
+            <span class="today-icon aqua">🌊</span>
+            <div><strong>Esperance adventure</strong><span id="tripCountdown">103 days to go</span></div>
+            <span class="status-chip blue">Soon</span>
+          </div>
+          <div class="today-item">
+            <span class="today-icon pink">❤️</span>
+            <div><strong>Together reminder</strong><span>Celebrate one small win tonight</span></div>
+            <span class="status-chip pink">Today</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="Homebound summary">
+        <article class="mini-card card tappable mint" data-detail="journey" tabindex="0" role="button">
+          <div class="mini-icon">🚗</div>
+          <div class="mini-label">Journey</div>
+          <div class="mini-value" id="journeyPercent">72%</div>
+          <div class="progress"><span style="--value:72%"></span></div>
+          <small>Moving steadily forward</small>
+        </article>
+        <article class="mini-card card tappable lavender" data-detail="garden" tabindex="0" role="button">
+          <div class="mini-icon">🌳</div>
+          <div class="mini-label">Garden</div>
+          <div class="mini-value" id="savingsValue">$11,250</div>
+          <div class="progress"><span style="--value:45%"></span></div>
+          <small>Your future is growing</small>
+        </article>
+        <article class="mini-card card tappable sky" data-detail="dreams" tabindex="0" role="button">
+          <div class="mini-icon">⭐</div>
+          <div class="mini-label">Dreams</div>
+          <div class="mini-value">6 active</div>
+          <div class="progress"><span style="--value:38%"></span></div>
+          <small>One dream at a time</small>
+        </article>
+        <article class="mini-card card tappable peach" data-detail="together" tabindex="0" role="button">
+          <div class="mini-icon">💞</div>
+          <div class="mini-label">Together</div>
+          <div class="mini-value">1,420 days</div>
+          <div class="progress"><span style="--value:64%"></span></div>
+          <small>Building a life together</small>
+        </article>
+      </section>
+
+      <section class="journey-card card tappable" data-detail="journey-preview" tabindex="0" role="button">
+        <div class="section-heading-row">
+          <div>
+            <span class="eyebrow green">YOUR JOURNEY</span>
+            <h2>Every step brings home closer</h2>
+          </div>
+          <span class="chevron">›</span>
+        </div>
+        <div class="journey-scene">
+          <div class="journey-sky"></div>
+          <div class="journey-hills back"></div>
+          <div class="journey-hills front"></div>
+          <div class="road"></div>
+          <div class="road-line"></div>
+          <div class="road-car" id="roadCar">🚙</div>
+          <div class="sign sign-one"><span>🌄</span><small>Scenic<br>Lookout</small></div>
+          <div class="sign sign-two"><span>🌳</span><small>Forest<br>Bend</small></div>
+          <div class="sign sign-three"><span>🌅</span><small>Sunrise<br>Point</small></div>
+          <div class="home-goal">🏡<small>Home</small></div>
+        </div>
+        <div class="journey-footer">
+          <div><strong>72%</strong><span>Journey complete</span></div>
+          <div><strong>14</strong><span>Steps remaining</span></div>
+          <div><strong>Feb 2027</strong><span>Estimated arrival</span></div>
+        </div>
+      </section>
+
+      <section class="motivation-card card">
+        <div class="motivation-icon">☀️</div>
+        <div>
+          <span class="eyebrow gold">TODAY’S REMINDER</span>
+          <blockquote>“Small steps become beautiful stories.”</blockquote>
+          <p>You’ve already come further than you think.</p>
+        </div>
+      </section>
+
+      <section class="quick-actions" aria-label="Quick actions">
+        <div class="section-heading-row compact"><h2>Quick actions</h2></div>
+        <div class="action-grid">
+          <button class="action-card" data-action="payment"><span>➕</span><strong>Add step</strong><small>Record progress</small></button>
+          <button class="action-card" data-action="memory"><span>📸</span><strong>Add memory</strong><small>Save a moment</small></button>
+          <button class="action-card" data-action="dream"><span>⭐</span><strong>Add dream</strong><small>Plan the future</small></button>
+          <button class="action-card" data-action="backup"><span>💾</span><strong>Backup</strong><small>Protect your story</small></button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Primary navigation">
+      <button class="nav-item" data-tab="journey"><span>🚗</span><small>Journey</small></button>
+      <button class="nav-item" data-tab="garden"><span>🌳</span><small>Garden</small></button>
+      <button class="nav-item" data-tab="dreams"><span>⭐</span><small>Dreams</small></button>
+      <button class="nav-item home-active" data-tab="home" aria-current="page"><span>🏡</span><small>Home</small></button>
+      <button class="nav-item" data-tab="adventures"><span>🌊</span><small>Adventures</small></button>
+      <button class="nav-item" data-tab="memories"><span>📖</span><small>Memories</small></button>
+      <button class="nav-item" data-tab="wins"><span>🏆</span><small>Wins</small></button>
+    </nav>
+  </div>
+
+  <aside class="sheet" id="detailSheet" aria-hidden="true">
+    <button class="sheet-backdrop" id="sheetBackdrop" aria-label="Close details"></button>
+    <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <div class="sheet-handle"></div>
+      <button class="sheet-close" id="sheetClose" aria-label="Close">×</button>
+      <div class="sheet-icon" id="sheetIcon">🏡</div>
+      <h2 id="sheetTitle">Homebound</h2>
+      <p id="sheetDescription"></p>
+      <div id="sheetContent"></div>
+    </div>
+  </aside>
+
+  <aside class="sheet" id="notificationsSheet" aria-hidden="true">
+    <button class="sheet-backdrop" data-close-notifications aria-label="Close notifications"></button>
+    <div class="sheet-panel notifications-panel" role="dialog" aria-modal="true" aria-labelledby="notificationsTitle">
+      <div class="sheet-handle"></div>
+      <button class="sheet-close" data-close-notifications aria-label="Close">×</button>
+      <div class="sheet-icon">🔔</div>
+      <h2 id="notificationsTitle">Notifications</h2>
+      <div class="notification-list">
+        <article><span>🌟</span><div><strong>You’re 72% along your current journey.</strong><small>Keep going—your next landmark is close.</small></div></article>
+        <article><span>🌊</span><div><strong>Esperance is getting closer.</strong><small>Review your trip checklist this week.</small></div></article>
+        <article><span>💾</span><div><strong>Your last backup was 8 days ago.</strong><small>Create a fresh copy after your next update.</small></div></article>
+      </div>
+    </div>
+  </aside>
+
+  <input id="restoreInput" type="file" accept="application/json" hidden />
+  <script src="app.js" defer></script>
+</body>
+</html>
