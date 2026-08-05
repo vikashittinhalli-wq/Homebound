@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#fffaf4" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Homebound" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/homebound-icon-180.png" />
+  <link rel="icon" href="assets/homebound-icon-192.png" />
+  <link rel="stylesheet" href="styles.css?v=4" />
+  <title>Homebound</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">🏡</div>
+      <div class="brand-copy"><div class="brand-name">Homebound</div><div class="brand-tagline">One step at a time. One dream at a time.</div></div>
+      <button class="icon-button" id="notificationsButton" aria-label="Open notifications"><span aria-hidden="true">🔔</span><b id="notificationBadge">3</b></button>
+    </header>
+
+    <main id="homePage" class="page home-page active-page">
+      <section class="recovery-banner" id="recoveryBanner"><span class="recovery-icon">🛟</span><div><strong>Recovery snapshot available</strong><small>Your latest safe copy is ready if you need it.</small></div><button id="dismissRecovery" class="plain-button">Dismiss</button></section>
+      <section class="hero-card" aria-labelledby="greetingTitle"><div class="hero-content"><span class="date-label" id="todayLabel"></span><h1 id="greetingTitle">Good morning ☀️</h1><p>You’re <strong id="stepsCloser">287</strong> steps closer to<br />the life you’re building together. ❤️</p></div><div class="hero-image" role="img" aria-label="A couple looking towards their future home"></div><div class="encouragement">💛 <span>Keep going, you’re doing great!</span></div></section>
+      <section class="section-block"><div class="section-title-row"><h2>Today’s focus</h2><button class="plain-button" data-detail="today">See all</button></div><div class="focus-grid"><button class="focus-card next-stop" data-detail="next-stop"><span class="focus-icon">📍</span><span class="focus-copy"><strong>Next Stop</strong><small id="homeNextStopName">Scenic Lookout</small><small id="homeNextStopDue">Due in 2 days</small></span><span class="status planned">Planned</span><span class="arrow">›</span></button><button class="focus-card adventure" data-detail="next-adventure"><span class="focus-icon">🌊</span><span class="focus-copy"><strong>Next Adventure</strong><small>Esperance</small><small>103 days to go</small></span><span class="status soon">Soon</span><span class="arrow">›</span></button></div></section>
+      <section class="section-block carousel-section"><div class="section-title-row"><h2>Our life</h2><span class="scroll-hint">Swipe to see more →</span></div><div class="life-carousel" id="lifeCarousel"><button class="life-card journey" data-tab="journey"><span class="life-art">🚗</span><strong>Journey</strong><b id="journeyPercent">0%</b><span class="bar"><i id="journeyBar" style="--progress:0%"></i></span><small>To freedom</small></button><button class="life-card garden" data-detail="garden"><span class="life-art">🌳</span><strong>Garden</strong><b>Growing 🌱</b><span class="bar"><i style="--progress:62%"></i></span><small>Our future</small></button><button class="life-card dreams" data-detail="dreams"><span class="life-art">⭐</span><strong>Dreams</strong><b>6 Active</b><span class="bar"><i style="--progress:47%"></i></span><small>Our why</small></button><button class="life-card memories" data-detail="memories"><span class="life-art">📖</span><strong>Memories</strong><b>42 Moments</b><span class="bar"><i style="--progress:55%"></i></span><small>Our story</small></button><button class="life-card wins" data-detail="wins"><span class="life-art">🏆</span><strong>Wins</strong><b>Celebrate</b><span class="bar"><i style="--progress:70%"></i></span><small>Our progress</small></button><button class="life-card adventures" data-detail="adventures"><span class="life-art">🧭</span><strong>Adventures</strong><b>New places await</b><span class="bar"><i style="--progress:39%"></i></span><small>Our adventures</small></button></div><div class="carousel-dots"><i class="active"></i><i></i><i></i><i></i></div></section>
+      <section class="section-block quick-section"><div class="section-title-row"><h2>Quick actions</h2></div><div class="quick-actions"><button data-action="payment"><span class="quick-icon purple">＋</span><small>Payment</small></button><button data-action="memory"><span class="quick-icon green">📷</span><small>Memory</small></button><button data-action="dream"><span class="quick-icon yellow">★</span><small>Dream</small></button><button data-action="backup"><span class="quick-icon blue">☁</span><small>Backup</small></button></div></section>
+    </main>
+
+    <main id="journeyPage" class="page journey-page" hidden>
+      <section class="journey-intro"><div><span class="eyebrow">YOUR ROAD HOME</span><h1>Journey</h1><p>Track every milestone. One step at a time.</p></div><button class="add-circle" id="addMilestoneButton" aria-label="Add milestone">＋</button></section>
+      <section class="journey-summary"><div><span>Overall progress</span><strong id="overallJourneyPercent">0%</strong><small id="overallJourneyCaption">You’re on your way.</small></div><div class="summary-ring" id="summaryRing"><span id="ringPercent">0%</span></div><dl><div><dt>Total starting</dt><dd id="totalStarting">$0</dd></div><div><dt>Total cleared</dt><dd id="totalCleared">$0</dd></div><div><dt>Total left</dt><dd id="totalLeft">$0</dd></div></dl></section>
+      <section class="milestone-map" id="milestoneMap" aria-label="Financial milestone map"></section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Primary navigation">
+      <button data-tab="journey"><span>🚗</span><small>Journey</small></button><button data-tab="garden"><span>🌳</span><small>Garden</small></button><button data-tab="dreams"><span>⭐</span><small>Dreams</small></button><button class="active" data-tab="home" aria-current="page"><span>🏡</span><small>Home</small></button><button data-tab="adventures"><span>🌊</span><small>Adventures</small></button><button data-tab="memories"><span>📖</span><small>Memories</small></button><button data-tab="wins"><span>🏆</span><small>Wins</small></button>
+    </nav>
+  </div>
+
+  <aside class="sheet" id="detailSheet" aria-hidden="true"><button class="sheet-backdrop" data-close-sheet aria-label="Close"></button><div class="sheet-panel" role="dialog" aria-modal="true"><div class="sheet-toolbar"><div class="sheet-handle"></div><button class="sheet-close" data-close-sheet type="button">Done</button></div><div class="sheet-icon" id="sheetIcon">🏡</div><h2 id="sheetTitle">Homebound</h2><p id="sheetDescription"></p><div id="sheetContent"></div></div></aside>
+  <aside class="sheet" id="notificationsSheet" aria-hidden="true"><button class="sheet-backdrop" data-close-notifications></button><div class="sheet-panel"><div class="sheet-toolbar"><div class="sheet-handle"></div><button class="sheet-close" data-close-notifications type="button">Done</button></div><div class="sheet-icon">🔔</div><h2>Notifications</h2><div class="notification-list"><article><span>📍</span><div><strong>Your next stop is due soon.</strong><small>Review your current milestone.</small></div></article><article><span>🌊</span><div><strong>Esperance is getting closer.</strong><small>103 days until your next adventure.</small></div></article><article><span>💾</span><div><strong>Your backup is ready.</strong><small>Keep a fresh copy somewhere safe.</small></div></article></div></div></aside>
+  <script src="app.js?v=5" defer></script>
+</body>
+</html>
